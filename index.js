@@ -3,7 +3,7 @@ const http = require('http')
 const fs = require('fs')
 const url = require('url')
 const port = 3000
-let htmlFile
+let htmlFile = ''
 
 http.createServer((req, res) => {
     var pathname = url.parse(req.url).pathname;
@@ -26,4 +26,4 @@ http.createServer((req, res) => {
         res.end(html)
     })
     
-}).listen(port)
+}).listen((process.env.PORT || port))
